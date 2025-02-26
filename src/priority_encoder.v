@@ -42,6 +42,8 @@ module tt_um_priority_encoder (
     end
 
     assign uo_out = C;
+    assign uio_out = 0;
+    assign uio_oe  = 0;
 
 
   // List all unused inputs to prevent warnings
