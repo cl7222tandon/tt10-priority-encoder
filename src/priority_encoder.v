@@ -41,13 +41,6 @@ module tt_um_priority_encoder (
         else if (In[0])  C = 8'd0;
     end
 
-    always @(posedge clk or negedge rst_n) begin
-        if (!rst_n) 
-            uo_out <= 8'b11110000;  // Reset behavior
-        else 
-            uo_out <= C;            // Latch result on clock edge
-    end
-
     assign uo_out = C;
     assign uio_out = 0;
     assign uio_oe  = 0;
