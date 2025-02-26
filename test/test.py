@@ -19,8 +19,8 @@ async def test_priority_encoder(dut):
     dut.ui_in.value = 0
     dut.uio_in.value = 0
     dut.rst_n.value = 0
-    await ClockCycles(dut.clk, 10)  # Hold reset for 10 cycles
-    dut.rst_n.value = 1  # Deassert reset
+    await ClockCycles(dut.clk, 10)  
+    dut.rst_n.value = 1  
 
     dut._log.info("Test project behavior")
     
@@ -33,8 +33,8 @@ async def test_priority_encoder(dut):
     ]
 
     for (a, b), expected_out in test_vectors:
-        dut.uio_in.value = a  # Upper 8 bits (A[7:0])
-        dut.ui_in.value = b   # Lower 8 bits (B[7:0])
+        dut.uio_in.value = a  
+        dut.ui_in.value = b  
         
 
         # Wait for one clock cycle to see the output values
